@@ -6,4 +6,8 @@ COPY package-lock.json ./
 RUN npm install --silent
 RUN npm install react-scripts@5.0.1 -g --silent
 COPY . ./
+# Build the app
+RUN npm run build
+# Expose the port
+EXPOSE 3000
 CMD ["npm", "start"]
